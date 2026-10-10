@@ -1,15 +1,17 @@
 
 /*
   GRUPO EMPRESARIAL CKD
-  PORTAFOLIO INTERACTIVO
+  PORTAFOLIO CORPORATIVO INTERACTIVO
 
-  Portada inicial: image2.png
-  Al hacer clic: mostrar las 23 marcas.
-  Imágenes en la misma carpeta que index.html.
+  25 MARCAS Y UNIDADES
+  9 SECTORES
+
+  Todas las imágenes deben estar en la misma
+  carpeta que index.html, style.css y app.js.
 */
 
 // ==========================================
-// SECTORES EMPRESARIALES
+// 1. SECTORES EMPRESARIALES
 // ==========================================
 
 const sectors = [
@@ -20,190 +22,357 @@ const sectors = [
   'Construcción y diseño',
   'Hospitalidad',
   'Deporte y experiencias',
-  'Industria y finanzas'
+  'Industria y finanzas',
+  'Marcas personales'
 ];
 
 // ==========================================
-// LAS 23 MARCAS DEL GRUPO CKD
+// 2. MARCAS DEL GRUPO EMPRESARIAL CKD
 // ==========================================
 
 const brands = [
+
   {
     name: 'Universidad TEC Mexiquense',
     sector: 0,
     image: 'image6.png',
     description: 'Educación superior con presencia regional y una estructura directiva definida.',
-    services: ['Educación superior', 'Expansión territorial'],
+    services: [
+      'Educación superior',
+      'Expansión territorial'
+    ],
     location: 'Toluca y Valle de Bravo, Estado de México · Apatzingán, Michoacán · Mérida, Yucatán',
-    notes: 'Rectora: Lic. Alejandra Trigos Cornejo. Director general: Lic. Óscar Huerta Téllez.'
+    notes: 'Rectora: Lic. Alejandra Trigos Cornejo. Director general y fundador: Lic. Óscar Huerta Téllez.'
   },
+
   {
     name: 'Universidad UBC',
     sector: 0,
     image: 'image12.png',
     description: 'Una de las marcas de educación superior del grupo, con campus en Zinacantepec.',
-    services: ['Formación universitaria'],
+    services: [
+      'Formación universitaria'
+    ],
     location: 'Zinacantepec, Estado de México',
     notes: 'Dirección general: Arq. César Huerta Téllez. Dirección de plantel: Karla Yaneli Chávez Jiménez.'
   },
+
   {
     name: 'Gran Cardenal',
     sector: 1,
     image: 'image37.png',
     description: 'Una experiencia gastronómica de buffet en el centro de Toluca.',
-    services: ['Buffet', 'Servicio gastronómico'],
+    services: [
+      'Buffet',
+      'Servicio gastronómico'
+    ],
     location: 'Centro de Toluca, Estado de México'
   },
+
   {
     name: 'PUBLIK-T',
     sector: 3,
     image: 'image27.png',
     description: 'Agencia de marketing que fortalece el posicionamiento y la comunicación de las marcas.',
-    services: ['Branding y contenidos', 'Comunicación y publicidad', 'Estrategias de captación']
+    services: [
+      'Branding y contenidos',
+      'Comunicación y publicidad',
+      'Estrategias de captación'
+    ]
   },
+
   {
     name: 'Equilibria Médica',
     sector: 2,
     image: 'image35.png',
     description: 'Promueve un estilo de vida físico, mental y espiritual con especialistas en distintas ramas del bienestar y la salud integral.',
-    services: ['Salud integral', 'Bienestar físico y mental', 'Bienestar espiritual']
+    services: [
+      'Salud integral',
+      'Bienestar físico y mental',
+      'Bienestar espiritual'
+    ]
   },
-  {
-    name: 'UNIDM / UNIDEM',
-    sector: 0,
-    image: 'image18.png',
-    description: 'Marca educativa en proceso de conversión hacia UDITEX como universidad digital.',
-    services: ['Educación digital', 'Transformación de la oferta educativa'],
-    notes: 'En proceso de conversión hacia UDITEX.'
-  },
+
   {
     name: 'CCEPM',
     sector: 0,
     image: 'image22.png',
     description: 'Corporativo de Centros Educativos Particulares en México, con convenios con más de 60 escuelas.',
-    services: ['Convenios institucionales', 'Vinculación educativa'],
+    services: [
+      'Convenios institucionales',
+      'Vinculación educativa'
+    ],
     notes: 'Más de 60 escuelas vinculadas.'
   },
-  {
-    name: 'CUIH',
-    sector: 0,
-    image: 'image11.jpeg',
-    description: 'Centro Universitario Impulsor Humanista. Institución educativa con enfoque humanista y formación profesional.',
-    services: ['Formación profesional', 'Educación con enfoque humanista']
-  },
+
   {
     name: 'UNISATEC',
     sector: 0,
     image: 'image8.png',
     description: 'Universidad de la Salud TEC. Forma parte de TEC Mexiquense y concentra carreras del área de la salud.',
-    services: ['Enfermería y Fisioterapia', 'Trabajo Social y Psicología', 'Formación en el área de la salud']
+    services: [
+      'Enfermería y Fisioterapia',
+      'Trabajo Social y Psicología',
+      'Formación en el área de la salud'
+    ]
   },
+
   {
     name: 'La Catedral',
     sector: 1,
     image: 'image39.png',
     description: 'Restaurante a la carta que ofrece una experiencia de servicio gastronómico.',
-    services: ['Restaurante a la carta', 'Servicio gastronómico']
+    services: [
+      'Restaurante a la carta',
+      'Servicio gastronómico'
+    ]
   },
+
   {
     name: 'Certifica-TEC',
     sector: 0,
     image: 'image24.png',
     description: 'Conecta al grupo con instituciones de nivel medio superior y genera alianzas académicas.',
-    services: ['Vinculación estratégica', 'Alianzas académicas', 'Colaboración con nivel medio superior']
+    services: [
+      'Vinculación estratégica',
+      'Alianzas académicas',
+      'Colaboración con nivel medio superior'
+    ]
   },
+
   {
     name: 'M&N Tecnologías',
     sector: 3,
     image: 'image29.png',
     description: 'Soluciones tecnológicas para digitalizar procesos y fortalecer la operación.',
-    services: ['Desarrollo de software', 'Programas y sistemas', 'Automatización y soluciones digitales']
+    services: [
+      'Desarrollo de software',
+      'Programas y sistemas',
+      'Automatización y soluciones digitales'
+    ]
   },
+
+  // UDITEX UNIFICADA
+
   {
-    name: 'UDITEC / UDITEX',
+    name: 'UDITEX',
     sector: 0,
     image: 'image16.png',
-    description: 'Universidad Digital de México. Oferta de carreras a distancia con enfoque flexible y cobertura ampliada.',
-    services: ['Carreras a distancia', 'Educación flexible', 'Cobertura digital']
+    description: 'Universidad digital orientada a la formación a distancia, la flexibilidad académica y nuevas oportunidades educativas.',
+    services: [
+      'Carreras a distancia',
+      'Educación flexible',
+      'Cobertura digital'
+    ]
   },
+
   {
     name: 'Casa NDOMI / Andomi',
     sector: 5,
     image: 'image42.png',
     description: 'División hotelera que conecta hospitalidad y experiencias de estancia.',
-    services: ['Hotelería', 'Experiencias de estancia'],
+    services: [
+      'Hotelería',
+      'Experiencias de estancia'
+    ],
     location: 'Valle de Bravo · Tenancingo · Tepoztlán'
   },
+
   {
     name: 'Proyecta+',
     sector: 4,
     image: 'image31.png',
     description: 'Capacidades de arquitectura, ingeniería y diseño para materializar proyectos integrales.',
-    services: ['Arquitectura e ingeniería', 'Diseño', 'Construcción']
+    services: [
+      'Arquitectura e ingeniería',
+      'Diseño',
+      'Construcción'
+    ]
   },
+
   {
     name: 'TEC Mexiquense KIDS',
     sector: 0,
     image: 'image20.png',
     description: 'Educación básica orientada a una formación integral desde las primeras etapas.',
-    services: ['Maternal y preescolar', 'Primaria', 'Secundaria']
+    services: [
+      'Maternal y preescolar',
+      'Primaria',
+      'Secundaria'
+    ]
   },
+
   {
     name: 'Plasti Jimmy',
     sector: 7,
     image: 'image46.png',
     description: 'Empresa dedicada a la inyección de plásticos y procesos de manufactura industrial.',
-    services: ['Inyección de plásticos', 'Manufactura industrial']
+    services: [
+      'Inyección de plásticos',
+      'Manufactura industrial'
+    ]
   },
+
   {
     name: 'León RZR',
     sector: 6,
     image: 'image33.png',
     description: 'Experiencias deportivas y recreativas que promueven movimiento y actividades al aire libre.',
-    services: ['Senderismo', 'Ciclismo', 'Actividades recreativas al aire libre']
+    services: [
+      'Senderismo',
+      'Ciclismo',
+      'Actividades recreativas al aire libre'
+    ]
   },
+
   {
     name: 'Yo cuento contigo, tú cuentas conmigo',
     sector: 7,
     image: 'image44.png',
     description: 'Marca financiera orientada a soluciones de apoyo y servicios financieros.',
-    services: ['Soluciones de apoyo', 'Servicios financieros']
+    services: [
+      'Soluciones de apoyo',
+      'Servicios financieros'
+    ]
   },
+
+  // SALÓN DE EVENTOS GRAN CARDENAL
+
   {
     name: 'Salón de Eventos Gran Cardenal',
     sector: 1,
-    image: 'image37.png',
+    image: 'SALON BLANCO.png',
     description: 'Espacio para encuentros empresariales y celebraciones sociales.',
-    services: ['Eventos empresariales', 'Eventos sociales'],
+    services: [
+      'Eventos empresariales',
+      'Eventos sociales'
+    ],
     location: 'San Luis, Zinacantepec, Estado de México'
   },
+
+  // LOS TOLUQUEÑOS - PRÓXIMAMENTE
+
   {
     name: 'Los Toluqueños',
     sector: 1,
     image: 'image41.png',
-    description: 'Concepto de restaurante con temática e identidad de Toluca.',
-    services: ['Concepto gastronómico', 'Identidad regional'],
-    location: 'Toluca, Estado de México',
-    notes: 'Proyecto en desarrollo.'
+    status: 'Próximamente',
+    description: 'Próximo concepto de restaurante con temática e identidad de Toluca.',
+    services: [
+      'Concepto gastronómico',
+      'Identidad regional'
+    ],
+    location: 'Ezequiel Ordóñez, colonia La Merced, Toluca, Estado de México',
+    notes: 'Próximamente.'
   },
+
   {
     name: 'UPM',
     sector: 0,
     image: 'image10.png',
     description: 'Universidad Pedagógica Montessori. Especialización en pedagogía, formación educativa y desarrollo docente.',
-    services: ['Pedagogía', 'Formación educativa', 'Desarrollo docente']
+    services: [
+      'Pedagogía',
+      'Formación educativa',
+      'Desarrollo docente'
+    ]
   },
+
   {
     name: 'Universidad UNG',
     sector: 0,
     image: null,
     description: 'Universidad Nueva Generación, enfocada en innovación educativa y nuevas oportunidades de formación.',
-    services: ['Innovación educativa', 'Formación universitaria']
+    services: [
+      'Innovación educativa',
+      'Formación universitaria'
+    ]
+  },
+
+  // NUEVA MARCA: EVENTOS INFANTILES
+
+  {
+    name: 'Salón de Eventos para Niños',
+    sector: 1,
+    image: null,
+    description: 'Espacio para celebraciones infantiles y experiencias especiales en familia.',
+    services: [
+      'Celebraciones infantiles',
+      'Eventos familiares'
+    ]
+  },
+
+  // NUEVA MARCA: STARFIT
+
+  {
+    name: 'Starfit',
+    sector: 6,
+    image: null,
+    status: 'Próximamente',
+    description: 'Nueva marca del ecosistema CKD. Próximamente compartiremos más información.',
+    services: [
+      'Proyecto en desarrollo'
+    ]
+  },
+
+  // MARCA PERSONAL: ALE TRIGOS
+
+  {
+    name: 'Ale Trigos',
+    sector: 8,
+    image: 'ALE TRIGOS COLOR.png',
+    portrait: 'fotoale.png',
+    type: 'person',
+
+    fullName: 'Lic. Alejandra Trigos Cornejo',
+
+    position: 'Rectora de Universidad TEC Mexiquense',
+
+    phone: '7225834073',
+
+    email: 'alejandra.trigos@tecmexiquense.edu.mx',
+
+    quote: 'Liderazgo y compromiso para abrir nuevas oportunidades a través de la educación.',
+
+    description: 'Marca personal vinculada al liderazgo y la gestión educativa.',
+
+    services: [
+      'Liderazgo educativo',
+      'Gestión institucional'
+    ]
+  },
+
+  // MARCA PERSONAL: ÓSCAR HUERTA
+
+  {
+    name: 'Óscar Huerta',
+    sector: 8,
+    image: 'oscar.png',
+    portrait: 'fotooscar.png',
+    type: 'person',
+
+    fullName: 'Lic. Óscar Huerta Téllez',
+
+    position: 'Fundador y director general de Universidad TEC Mexiquense',
+
+    phone: '7221185685',
+
+    email: 'tecmequense@hotmail.com',
+
+    quote: 'Visión y compromiso para impulsar proyectos que transforman la educación.',
+
+    description: 'Marca personal vinculada al desarrollo empresarial y educativo.',
+
+    services: [
+      'Dirección general',
+      'Fundación y desarrollo institucional'
+    ]
   }
+
 ];
 
 // ==========================================
-// LOGOTIPOS Y RUTAS DE IMÁGENES
+// 3. CONFIGURACIÓN DE LOGOTIPOS
 // ==========================================
 
 const dark = new Set([
@@ -211,47 +380,79 @@ const dark = new Set([
   'image27.png',
   'image39.png',
   'image31.png',
-  'image41.png'
+  'image41.png',
+  'SALON BLANCO.png',
+  'oscar.png'
 ]);
 
-// Las imágenes están junto a index.html.
+// Las imágenes se encuentran junto a index.html.
+
 const imagePath = filename => `./${filename}`;
 
-function escapeHTML(value) {
-  return String(value ?? '').replace(/[&<>"']/g, char => ({
+// PROTECCIÓN DE CONTENIDO HTML
+
+const escapeHTML = value =>
+  String(value ?? '').replace(/[&<>"']/g, char => ({
     '&': '&amp;',
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
     "'": '&#39;'
   })[char]);
-}
+
+// ==========================================
+// 4. GENERAR LOGOTIPOS
+// ==========================================
 
 function logo(brand) {
 
-  const darkClass = dark.has(brand.image) ? ' dark' : '';
+  const isDark = dark.has(brand.image)
+    ? ' dark'
+    : '';
 
-  const content = brand.image
-    ? `<img
-         src="${imagePath(brand.image)}"
-         alt="Logotipo de ${escapeHTML(brand.name)}"
-         loading="lazy"
-         decoding="async"
-       >`
-    : `<span class="logo-type">
-         UNG<br>
-         <small>Universidad Nueva Generación</small>
-       </span>`;
+  let content;
+
+  if (brand.image) {
+
+    content = `
+      <img
+        src="${imagePath(brand.image)}"
+        alt="Logotipo de ${escapeHTML(brand.name)}"
+        loading="lazy"
+        decoding="async"
+      >
+    `;
+
+  } else if (brand.name === 'Universidad UNG') {
+
+    content = `
+      <span class="logo-type">
+        UNG
+        <br>
+        <small>Universidad Nueva Generación</small>
+      </span>
+    `;
+
+  } else {
+
+    content = `
+      <span class="logo-type logo-placeholder">
+        ${escapeHTML(brand.name)}
+      </span>
+    `;
+
+  }
 
   return `
-    <div class="logo-box${darkClass}">
+    <div class="logo-box${isDark}">
       ${content}
     </div>
   `;
+
 }
 
 // ==========================================
-// VARIABLES DEL PORTAFOLIO
+// 5. VARIABLES GENERALES
 // ==========================================
 
 let filter = -1;
@@ -262,15 +463,20 @@ const cards = document.querySelector('#cards');
 const filters = document.querySelector('#filters');
 const dialog = document.querySelector('#brand-dialog');
 
-const portfolioContent = document.querySelector('#portfolio-content');
-const enterButton = document.querySelector('#reveal');
-const secondReveal = document.querySelector('#second-reveal');
+const portfolioContent =
+  document.querySelector('#portfolio-content');
+
+const enterButton =
+  document.querySelector('#reveal');
+
+const secondReveal =
+  document.querySelector('#second-reveal');
 
 const reduceMotion = () =>
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ==========================================
-// GENERAR TARJETAS DE LAS MARCAS
+// 6. GENERAR TARJETAS DEL PORTAFOLIO
 // ==========================================
 
 function renderCards() {
@@ -295,13 +501,25 @@ function renderCards() {
           ${escapeHTML(sectors[brand.sector])}
         </small>
 
+        ${brand.status
+          ? `<span class="status-tag">
+               ${escapeHTML(brand.status)}
+             </span>`
+          : ''
+        }
+
         <h3>
           ${escapeHTML(brand.name)}
         </h3>
 
         <div class="card-bottom">
 
-          <span>Conocer la marca</span>
+          <span>
+            ${brand.type === 'person'
+              ? 'Ver tarjeta digital'
+              : 'Conocer la marca'
+            }
+          </span>
 
           <b>
             <svg
@@ -326,7 +544,7 @@ function renderCards() {
 
 }
 
-// ABRIR LA MARCA SELECCIONADA
+// CLIC EN LAS TARJETAS
 
 cards.addEventListener('click', event => {
 
@@ -339,7 +557,7 @@ cards.addEventListener('click', event => {
 });
 
 // ==========================================
-// FILTROS DEL PORTAFOLIO
+// 7. FILTROS POR SECTOR
 // ==========================================
 
 filters.innerHTML = [
@@ -384,34 +602,41 @@ filters.addEventListener('click', event => {
 });
 
 // ==========================================
-// ENTRAR AL PORTAFOLIO DESDE EL LOGOTIPO
+// 8. PORTADA: CLIC EN EL LOGOTIPO CKD
 // ==========================================
 
 function reveal(event) {
 
   event?.preventDefault();
 
-  // Desactivar la portada inicial.
+  // Ocultar el estado de portada inicial.
+
   document.body.classList.remove('landing-only');
 
-  // Mostrar las 23 marcas.
+  // Mostrar las marcas.
+
   portfolioContent.hidden = false;
 
-  // Ocultar botón secundario.
+  // Ocultar el botón secundario.
+
   secondReveal.hidden = true;
 
-  // Actualizar estado del logo principal.
+  // Actualizar estado del logotipo.
+
   enterButton.setAttribute(
     'aria-expanded',
     'true'
   );
 
-  // Desplazamiento directo a las marcas.
+  // Ir directamente a las marcas.
+
   requestAnimationFrame(() => {
 
     portfolioContent.scrollIntoView({
 
-      behavior: reduceMotion() ? 'auto' : 'smooth',
+      behavior: reduceMotion()
+        ? 'auto'
+        : 'smooth',
 
       block: 'start'
 
@@ -421,7 +646,7 @@ function reveal(event) {
 
 }
 
-// CLIC EN EL LOGOTIPO PRINCIPAL
+// ACTIVAR CLIC EN EL LOGOTIPO
 
 enterButton.addEventListener('click', reveal);
 
@@ -438,34 +663,42 @@ document.querySelectorAll('[data-open]').forEach(link => {
 });
 
 // ==========================================
-// REGRESAR A LA PORTADA PRINCIPAL
+// 9. VOLVER A LA PORTADA PRINCIPAL
 // ==========================================
 
 function returnHome(event) {
 
   event.preventDefault();
 
-  // Ocultar las marcas.
+  // Ocultar marcas.
+
   portfolioContent.hidden = true;
 
   // Restaurar botón secundario.
+
   secondReveal.hidden = false;
 
-  // Actualizar estado.
+  // Actualizar el estado.
+
   enterButton.setAttribute(
     'aria-expanded',
     'false'
   );
 
-  // Activar nuevamente la portada minimalista.
+  // Mostrar únicamente el logotipo CKD.
+
   document.body.classList.add('landing-only');
 
-  // Regresar al logotipo CKD.
-  window.scrollTo(0, 0);
+  // Regresar al inicio.
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'instant'
+  });
 
 }
 
-// LOGOTIPOS Y ENLACES PARA VOLVER AL INICIO
+// ENLACES PARA REGRESAR AL INICIO
 
 document.querySelectorAll('a[href="#inicio"]').forEach(link => {
 
@@ -474,76 +707,186 @@ document.querySelectorAll('a[href="#inicio"]').forEach(link => {
 });
 
 // ==========================================
-// INFORMACIÓN DETALLADA DE CADA MARCA
+// 10. TARJETA DIGITAL DE LOS DIRECTIVOS
+// ==========================================
+
+function digitalCard(brand) {
+
+  const fullName = escapeHTML(brand.fullName);
+  const phone = escapeHTML(brand.phone);
+  const email = escapeHTML(brand.email);
+
+  return `
+
+    <div class="personal-profile">
+
+      <!-- FOTOGRAFÍA PROFESIONAL -->
+
+      <img
+        class="personal-photo"
+        src="${imagePath(brand.portrait)}"
+        alt="Fotografía de ${fullName}"
+      >
+
+      <div class="personal-info">
+
+        <!-- LOGOTIPO PERSONAL -->
+
+        ${logo(brand)}
+
+        <p class="eyebrow">
+          MARCA PERSONAL / GRUPO CKD
+        </p>
+
+        <h2 id="brand-title">
+          ${fullName}
+        </h2>
+
+        <p class="personal-position">
+          ${escapeHTML(brand.position)}
+        </p>
+
+        <!-- FRASE PROFESIONAL -->
+
+        <blockquote>
+          ${escapeHTML(brand.quote)}
+        </blockquote>
+
+        <!-- TARJETA DIGITAL -->
+
+        <div class="digital-contact">
+
+          <h3>Tarjeta digital</h3>
+
+          <a href="tel:+52${phone}">
+            Tel.
+            ${phone.replace(
+              /^(\d{3})(\d{3})(\d{4})$/,
+              '$1 $2 $3'
+            )}
+          </a>
+
+          <a href="mailto:${email}">
+            ${email}
+          </a>
+
+          <button
+            class="outline contact-save"
+            type="button"
+            data-save-contact
+          >
+            Guardar contacto
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  `;
+
+}
+
+// ==========================================
+// 11. INFORMACIÓN DETALLADA DE CADA MARCA
 // ==========================================
 
 function detail() {
 
   const brand = brands[selected];
 
-  document.querySelector('#brand-detail').innerHTML = `
+  const detailBox =
+    document.querySelector('#brand-detail');
 
-    <div class="detail-top">
+  // DIFERENCIAR MARCAS PERSONALES
 
-      ${logo(brand)}
+  if (brand.type === 'person') {
 
-      <div>
+    detailBox.innerHTML = digitalCard(brand);
 
-        <p class="eyebrow">
-          ${escapeHTML(sectors[brand.sector])} / PORTAFOLIO CKD
-        </p>
+  } else {
 
-        <h2 id="brand-title">
-          ${escapeHTML(brand.name)}
-        </h2>
+    detailBox.innerHTML = `
 
-      </div>
+      <div class="detail-top">
 
-    </div>
+        ${logo(brand)}
 
-    <p class="detail-description">
-      ${escapeHTML(brand.description)}
-    </p>
+        <div>
 
-    <div class="detail-grid">
+          <p class="eyebrow">
+            ${escapeHTML(sectors[brand.sector])}
+            / PORTAFOLIO CKD
+          </p>
 
-      <div>
+          <h2 id="brand-title">
+            ${escapeHTML(brand.name)}
+          </h2>
 
-        <h3>Enfoque y servicios</h3>
+          ${brand.status
+            ? `<p class="detail-status">
+                 ${escapeHTML(brand.status)}
+               </p>`
+            : ''
+          }
 
-        <ul>
-
-          ${brand.services.map(service => `
-            <li>${escapeHTML(service)}</li>
-          `).join('')}
-
-        </ul>
-
-      </div>
-
-      <div>
-
-        <h3>
-          ${brand.location ? 'Presencia' : 'Dentro del grupo'}
-        </h3>
-
-        <p>
-          ${escapeHTML(
-            brand.location ||
-            'Una marca del ecosistema empresarial gestionado por Grupo Empresarial CKD.'
-          )}
-        </p>
-
-        ${brand.notes
-          ? `<p>${escapeHTML(brand.notes)}</p>`
-          : ''
-        }
+        </div>
 
       </div>
 
-    </div>
+      <p class="detail-description">
+        ${escapeHTML(brand.description)}
+      </p>
 
-  `;
+      <div class="detail-grid">
+
+        <div>
+
+          <h3>Enfoque y servicios</h3>
+
+          <ul>
+
+            ${brand.services.map(service => `
+              <li>
+                ${escapeHTML(service)}
+              </li>
+            `).join('')}
+
+          </ul>
+
+        </div>
+
+        <div>
+
+          <h3>
+            ${brand.location
+              ? 'Presencia'
+              : 'Dentro del grupo'
+            }
+          </h3>
+
+          <p>
+            ${escapeHTML(
+              brand.location ||
+              'Una marca del ecosistema empresarial gestionado por Grupo Empresarial CKD.'
+            )}
+          </p>
+
+          ${brand.notes
+            ? `<p>
+                 ${escapeHTML(brand.notes)}
+               </p>`
+            : ''
+          }
+
+        </div>
+
+      </div>
+    `;
+
+  }
+
+  // CONTADOR DE EMPRESAS
 
   document.querySelector('#position').textContent =
     `${String(selected + 1).padStart(2, '0')} / ${brands.length}`;
@@ -553,7 +896,110 @@ function detail() {
 }
 
 // ==========================================
-// ABRIR VENTANA DE EMPRESA
+// 12. GUARDAR CONTACTO DIGITAL
+// ==========================================
+
+function saveContact(brand) {
+
+  if (brand.type !== 'person') return;
+
+  const clean = value =>
+    String(value)
+      .replace(/[\\;,\n\r]/g, ' ')
+      .trim();
+
+  // CREAR TARJETA DE CONTACTO VCF
+
+  const vcf = [
+
+    'BEGIN:VCARD',
+
+    'VERSION:3.0',
+
+    `FN:${clean(brand.fullName)}`,
+
+    `ORG:${clean('Universidad TEC Mexiquense')}`,
+
+    `TITLE:${clean(brand.position)}`,
+
+    `TEL;TYPE=CELL:+52${brand.phone}`,
+
+    `EMAIL;TYPE=INTERNET:${brand.email}`,
+
+    'END:VCARD'
+
+  ].join('\r\n');
+
+  // GENERAR ARCHIVO DESCARGABLE
+
+  const url = URL.createObjectURL(
+    new Blob(
+      [vcf],
+      {
+        type: 'text/vcard;charset=utf-8'
+      }
+    )
+  );
+
+  const link = document.createElement('a');
+
+  link.href = url;
+
+  link.download =
+    brand.name === 'Ale Trigos'
+      ? 'Ale-Trigos.vcf'
+      : 'Oscar-Huerta.vcf';
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  link.remove();
+
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+  }, 1000);
+
+}
+
+// ==========================================
+// 13. INTERACCIONES DE LA VENTANA
+// ==========================================
+
+dialog.addEventListener('click', event => {
+
+  // GUARDAR CONTACTO
+
+  if (event.target.closest('[data-save-contact]')) {
+
+    saveContact(brands[selected]);
+
+    return;
+
+  }
+
+  // CERRAR AL HACER CLIC FUERA
+
+  if (event.target === dialog) {
+
+    const rect = dialog.getBoundingClientRect();
+
+    const outside =
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom;
+
+    if (outside) {
+      dialog.close();
+    }
+
+  }
+
+});
+
+// ==========================================
+// 14. ABRIR VENTANA DE EMPRESA
 // ==========================================
 
 function openBrand(index) {
@@ -571,16 +1017,12 @@ function openBrand(index) {
 }
 
 // ==========================================
-// CERRAR VENTANA DE EMPRESA
+// 15. CERRAR VENTANA
 // ==========================================
-
-function closeDialog() {
-  dialog.close();
-}
 
 document.querySelector('.close').addEventListener(
   'click',
-  closeDialog
+  () => dialog.close()
 );
 
 dialog.addEventListener('close', () => {
@@ -591,28 +1033,8 @@ dialog.addEventListener('close', () => {
 
 });
 
-// CERRAR AL PULSAR FUERA DE LA VENTANA
-
-dialog.addEventListener('click', event => {
-
-  if (event.target !== dialog) return;
-
-  const rect = dialog.getBoundingClientRect();
-
-  const outside =
-    event.clientX < rect.left ||
-    event.clientX > rect.right ||
-    event.clientY < rect.top ||
-    event.clientY > rect.bottom;
-
-  if (outside) {
-    closeDialog();
-  }
-
-});
-
 // ==========================================
-// NAVEGACIÓN ENTRE MARCAS
+// 16. NAVEGACIÓN ENTRE MARCAS
 // ==========================================
 
 function step(direction) {
@@ -625,10 +1047,14 @@ function step(direction) {
 
 }
 
+// BOTÓN ANTERIOR
+
 document.querySelector('#prev').addEventListener(
   'click',
   () => step(-1)
 );
+
+// BOTÓN SIGUIENTE
 
 document.querySelector('#next').addEventListener(
   'click',
@@ -652,10 +1078,11 @@ document.addEventListener('keydown', event => {
 });
 
 // ==========================================
-// MODO PRESENTACIÓN / PANTALLA COMPLETA
+// 17. MODO PRESENTACIÓN
 // ==========================================
 
-const fullscreenButton = document.querySelector('#fullscreen');
+const fullscreenButton =
+  document.querySelector('#fullscreen');
 
 fullscreenButton.addEventListener('click', async () => {
 
@@ -684,29 +1111,30 @@ fullscreenButton.addEventListener('click', async () => {
 
 document.addEventListener('fullscreenchange', () => {
 
-  fullscreenButton.innerHTML = document.fullscreenElement
+  fullscreenButton.innerHTML =
+    document.fullscreenElement
 
-    ? 'Salir de presentación ↙'
+      ? 'Salir de presentación ↙'
 
-    : `Modo presentación
-       <span>
-         <svg
-           width="14"
-           height="14"
-           viewBox="0 0 24 24"
-           fill="none"
-           stroke="currentColor"
-           stroke-width="1.5"
-           aria-hidden="true"
-         >
-           <path d="M5 19 19 5M5 5h14v14"/>
-         </svg>
-       </span>`;
+      : `Modo presentación
+         <span>
+           <svg
+             width="14"
+             height="14"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.5"
+             aria-hidden="true"
+           >
+             <path d="M5 19 19 5M5 5h14v14"/>
+           </svg>
+         </span>`;
 
 });
 
 // ==========================================
-// UBICACIONES DEL GRUPO EMPRESARIAL
+// 18. UBICACIONES DEL GRUPO CKD
 // ==========================================
 
 const locations = [
@@ -756,24 +1184,25 @@ const locations = [
 ];
 
 // ==========================================
-// MOSTRAR UBICACIONES
+// 19. MOSTRAR UBICACIONES
 // ==========================================
 
 document.querySelector('#locations').innerHTML =
-  locations.map(location => `
+
+  locations.map(item => `
 
     <article class="location">
 
       <small>
-        ${escapeHTML(location[1].toUpperCase())}
+        ${escapeHTML(item[1].toUpperCase())}
       </small>
 
       <h3>
-        ${escapeHTML(location[0])}
+        ${escapeHTML(item[0])}
       </h3>
 
       <p>
-        ${escapeHTML(location[2])}
+        ${escapeHTML(item[2])}
       </p>
 
     </article>
@@ -781,7 +1210,26 @@ document.querySelector('#locations').innerHTML =
   `).join('');
 
 // ==========================================
-// INICIAR PORTAFOLIO
+// 20. ACTUALIZAR CONTADORES
+// ==========================================
+
+// NÚMERO DE MARCAS
+
+document.querySelector('#brand-count').textContent =
+  String(brands.length);
+
+// NÚMERO DE SECTORES
+
+document.querySelector('#sector-count').textContent =
+  String(sectors.length).padStart(2, '0');
+
+// BOTÓN DE DESCUBRIR MARCAS
+
+secondReveal.querySelector('.reveal-count').textContent =
+  String(brands.length);
+
+// ==========================================
+// 21. INICIAR PORTAFOLIO
 // ==========================================
 
 renderCards();
