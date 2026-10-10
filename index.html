@@ -1,12 +1,527 @@
+
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111310"><title>Grupo Empresarial CKD · Portafolio corporativo</title><link rel="stylesheet" href="style.css"></head>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta name="theme-color" content="#111310">
+
+  <meta
+    name="description"
+    content="Grupo Empresarial CKD. Un ecosistema de marcas, sectores y empresas que comparten una visión de crecimiento."
+  >
+
+  <title>
+    Grupo Empresarial CKD · Portafolio corporativo
+  </title>
+
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
 <body>
-<header><a class="wordmark" href="#inicio" aria-label="CKD inicio">CKD<span>GRUPO EMPRESARIAL</span></a><nav aria-label="Navegación principal"><a href="#portafolio" data-open>Portafolio</a><a href="#vision">Nuestra visión</a><a href="#presencia">Presencia</a></nav><button class="present" id="fullscreen">Modo presentación <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></button></header>
-<main>
-<section class="hero" id="inicio"><div class="hero-art"></div><div class="hero-content"><p class="eyebrow"><span></span> UN GRUPO. MÚLTIPLES POSIBILIDADES.</p><button class="hero-logo" id="reveal" aria-expanded="false" aria-controls="portfolio-content"><img src="assets/image2.png" alt="Grupo Empresarial CKD"><span>EXPLORAR EL ECOSISTEMA <b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></b></span></button><h1>Una visión que conecta.<br><em>Un grupo que impulsa.</em></h1><p class="intro">Integramos talento, marcas y sectores para transformar<br class="desktop"> oportunidades en crecimiento compartido.</p><div class="hero-bottom"><span>PRESENTACIÓN CORPORATIVA</span><span>ESTRATEGIA · CONEXIÓN · CRECIMIENTO</span></div></div><div class="side-label">PORTAFOLIO EMPRESARIAL / CKD</div></section>
-<section class="portfolio" id="portafolio"><div class="section-heading"><div><p class="eyebrow">01 / NUESTRO ECOSISTEMA</p><h2>Identidades propias.<br><em>Una misma dirección.</em></h2></div><p>Un portafolio multisectorial bajo una visión común.<br>Descubre las marcas que dan vida a nuestro grupo.</p></div><div class="stats"><div><strong>23</strong><span>MARCAS Y UNIDADES</span></div><div><strong>08</strong><span>SECTORES EMPRESARIALES</span></div><div><strong>07</strong><span>REGIONES DE PRESENCIA</span></div><div><strong>+60</strong><span>ESCUELAS VINCULADAS</span></div></div><div id="portfolio-content" hidden><div class="filters" id="filters" aria-label="Filtrar marcas por sector"></div><div class="cards" id="cards"></div><p class="portfolio-note">Selecciona una marca para conocer su enfoque, servicios y presencia.</p></div><button class="outline" id="second-reveal">Descubrir las 23 marcas <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span></button></section>
-<section class="vision" id="vision"><div><p class="eyebrow">02 / DIRECCIÓN CORPORATIVA</p><h2>El valor de estar<br><em>conectados.</em></h2><p class="body-copy">Grupo Empresarial CKD articula y gestiona un portafolio multisectorial, manteniendo dirección estratégica, identidad institucional y visión de crecimiento para cada marca.</p><blockquote>“Un grupo. Múltiples sectores.<br>Una misma visión de crecimiento.”</blockquote></div><div class="principles"><article><span>01</span><div><h3>Dirección estratégica</h3><p>Objetivos, expansión, prioridades y visión corporativa.</p></div><b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></b></article><article><span>02</span><div><h3>Identidad y comunicación</h3><p>Posicionamiento, narrativa, diseño y presencia pública.</p></div><b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></b></article><article><span>03</span><div><h3>Operación y seguimiento</h3><p>Ejecución, indicadores, coordinación y mejora continua.</p></div><b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></b></article><article><span>04</span><div><h3>Alianzas y crecimiento</h3><p>Convenios, vinculación y nuevas oportunidades.</p></div><b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></b></article></div></section>
-<section class="presence" id="presencia"><p class="eyebrow">03 / PRESENCIA TERRITORIAL</p><div class="section-heading"><h2>Cercanos al territorio.<br><em>Abiertos al futuro.</em></h2><p>Operación, vinculación o proyección<br>en distintas regiones de México.</p></div><div class="locations" id="locations"></div></section>
-<footer><a class="wordmark" href="#inicio">CKD<span>GRUPO EMPRESARIAL</span></a><p>Un ecosistema empresarial. Una visión compartida.</p><a href="#inicio">Volver al inicio ↑</a></footer></main>
-<dialog id="brand-dialog" aria-labelledby="brand-title"><button class="close" aria-label="Cerrar presentación">✕</button><div id="brand-detail"></div><div class="dialog-nav"><button id="prev">← Anterior</button><span id="position"></span><button id="next">Siguiente →</button></div></dialog>
-<script src="app.js"></script></body></html>
+
+  <!-- ENCABEZADO Y NAVEGACIÓN -->
+
+  <header>
+
+    <a
+      class="wordmark"
+      href="#inicio"
+      aria-label="CKD inicio"
+    >
+      CKD
+      <span>GRUPO EMPRESARIAL</span>
+    </a>
+
+    <nav aria-label="Navegación principal">
+
+      <a href="#portafolio" data-open>
+        Portafolio
+      </a>
+
+      <a href="#vision">
+        Nuestra visión
+      </a>
+
+      <a href="#presencia">
+        Presencia
+      </a>
+
+    </nav>
+
+    <button
+      class="present"
+      id="fullscreen"
+      type="button"
+    >
+      Modo presentación
+
+      <span>
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <path d="M5 19 19 5M5 5h14v14"/>
+        </svg>
+      </span>
+
+    </button>
+
+  </header>
+
+  <main>
+
+    <!-- SECCIÓN PRINCIPAL / INICIO -->
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-art"></div>
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          <span></span>
+          UN GRUPO. MÚLTIPLES POSIBILIDADES.
+        </p>
+
+        <!-- LOGOTIPO PRINCIPAL CKD -->
+        <!-- Imagen cargada desde carpeta principal -->
+
+        <button
+          class="hero-logo"
+          id="reveal"
+          type="button"
+          aria-expanded="false"
+          aria-controls="portfolio-content"
+        >
+
+          <img
+            src="./image2.png"
+            alt="Grupo Empresarial CKD"
+            decoding="async"
+          >
+
+          <span>
+            EXPLORAR EL ECOSISTEMA
+
+            <b>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+              >
+                <path d="M5 19 19 5M5 5h14v14"/>
+              </svg>
+            </b>
+
+          </span>
+
+        </button>
+
+        <!-- TEXTO PRINCIPAL -->
+
+        <h1>
+          Una visión que conecta.
+          <br>
+          <em>Un grupo que impulsa.</em>
+        </h1>
+
+        <p class="intro">
+          Integramos talento, marcas y sectores para transformar
+          <br class="desktop">
+          oportunidades en crecimiento compartido.
+        </p>
+
+        <div class="hero-bottom">
+
+          <span>
+            PRESENTACIÓN CORPORATIVA
+          </span>
+
+          <span>
+            ESTRATEGIA · CONEXIÓN · CRECIMIENTO
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="side-label">
+        PORTAFOLIO EMPRESARIAL / CKD
+      </div>
+
+    </section>
+
+
+    <!-- PORTAFOLIO EMPRESARIAL -->
+
+    <section class="portfolio" id="portafolio">
+
+      <div class="section-heading">
+
+        <div>
+
+          <p class="eyebrow">
+            01 / NUESTRO ECOSISTEMA
+          </p>
+
+          <h2>
+            Identidades propias.
+            <br>
+            <em>Una misma dirección.</em>
+          </h2>
+
+        </div>
+
+        <p>
+          Un portafolio multisectorial bajo una visión común.
+          <br>
+          Descubre las marcas que dan vida a nuestro grupo.
+        </p>
+
+      </div>
+
+      <!-- ESTADÍSTICAS -->
+
+      <div class="stats">
+
+        <div>
+          <strong>23</strong>
+          <span>MARCAS Y UNIDADES</span>
+        </div>
+
+        <div>
+          <strong>08</strong>
+          <span>SECTORES EMPRESARIALES</span>
+        </div>
+
+        <div>
+          <strong>07</strong>
+          <span>REGIONES DE PRESENCIA</span>
+        </div>
+
+        <div>
+          <strong>+60</strong>
+          <span>ESCUELAS VINCULADAS</span>
+        </div>
+
+      </div>
+
+      <!-- PORTAFOLIO INTERACTIVO -->
+
+      <div id="portfolio-content" hidden>
+
+        <div
+          class="filters"
+          id="filters"
+          aria-label="Filtrar marcas por sector"
+        ></div>
+
+        <!-- LAS MARCAS SE GENERAN DESDE APP.JS -->
+
+        <div class="cards" id="cards"></div>
+
+        <p class="portfolio-note">
+          Selecciona una marca para conocer su enfoque,
+          servicios y presencia.
+        </p>
+
+      </div>
+
+      <!-- BOTÓN PARA DESCUBRIR LAS EMPRESAS -->
+
+      <button
+        class="outline"
+        id="second-reveal"
+        type="button"
+      >
+
+        Descubrir las 23 marcas
+
+        <span>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M5 19 19 5M5 5h14v14"/>
+          </svg>
+        </span>
+
+      </button>
+
+    </section>
+
+
+    <!-- NUESTRA VISIÓN -->
+
+    <section class="vision" id="vision">
+
+      <div>
+
+        <p class="eyebrow">
+          02 / DIRECCIÓN CORPORATIVA
+        </p>
+
+        <h2>
+          El valor de estar
+          <br>
+          <em>conectados.</em>
+        </h2>
+
+        <p class="body-copy">
+          Grupo Empresarial CKD articula y gestiona un
+          portafolio multisectorial, manteniendo dirección
+          estratégica, identidad institucional y visión de
+          crecimiento para cada marca.
+        </p>
+
+        <blockquote>
+          “Un grupo. Múltiples sectores.
+          <br>
+          Una misma visión de crecimiento.”
+        </blockquote>
+
+      </div>
+
+      <!-- PRINCIPIOS CORPORATIVOS -->
+
+      <div class="principles">
+
+        <article>
+
+          <span>01</span>
+
+          <div>
+            <h3>Dirección estratégica</h3>
+            <p>
+              Objetivos, expansión, prioridades
+              y visión corporativa.
+            </p>
+          </div>
+
+          <b>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path d="M5 19 19 5M5 5h14v14"/>
+            </svg>
+          </b>
+
+        </article>
+
+        <article>
+
+          <span>02</span>
+
+          <div>
+            <h3>Identidad y comunicación</h3>
+            <p>
+              Posicionamiento, narrativa, diseño
+              y presencia pública.
+            </p>
+          </div>
+
+          <b>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path d="M5 19 19 5M5 5h14v14"/>
+            </svg>
+          </b>
+
+        </article>
+
+        <article>
+
+          <span>03</span>
+
+          <div>
+            <h3>Operación y seguimiento</h3>
+            <p>
+              Ejecución, indicadores, coordinación
+              y mejora continua.
+            </p>
+          </div>
+
+          <b>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path d="M5 19 19 5M5 5h14v14"/>
+            </svg>
+          </b>
+
+        </article>
+
+        <article>
+
+          <span>04</span>
+
+          <div>
+            <h3>Alianzas y crecimiento</h3>
+            <p>
+              Convenios, vinculación y
+              nuevas oportunidades.
+            </p>
+          </div>
+
+          <b>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path d="M5 19 19 5M5 5h14v14"/>
+            </svg>
+          </b>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRESENCIA TERRITORIAL -->
+
+    <section class="presence" id="presencia">
+
+      <p class="eyebrow">
+        03 / PRESENCIA TERRITORIAL
+      </p>
+
+      <div class="section-heading">
+
+        <h2>
+          Cercanos al territorio.
+          <br>
+          <em>Abiertos al futuro.</em>
+        </h2>
+
+        <p>
+          Operación, vinculación o proyección
+          <br>
+          en distintas regiones de México.
+        </p>
+
+      </div>
+
+      <!-- UBICACIONES DESDE APP.JS -->
+
+      <div
+        class="locations"
+        id="locations"
+      ></div>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+      <a
+        class="wordmark"
+        href="#inicio"
+      >
+        CKD
+        <span>GRUPO EMPRESARIAL</span>
+      </a>
+
+      <p>
+        Un ecosistema empresarial.
+        Una visión compartida.
+      </p>
+
+      <a href="#inicio">
+        Volver al inicio ↑
+      </a>
+
+    </footer>
+
+  </main>
+
+
+  <!-- VENTANA INTERACTIVA DE MARCAS -->
+
+  <dialog
+    id="brand-dialog"
+    aria-labelledby="brand-title"
+  >
+
+    <button
+      class="close"
+      type="button"
+      aria-label="Cerrar presentación"
+    >
+      ✕
+    </button>
+
+    <div id="brand-detail"></div>
+
+    <div class="dialog-nav">
+
+      <button id="prev" type="button">
+        ← Anterior
+      </button>
+
+      <span id="position"></span>
+
+      <button id="next" type="button">
+        Siguiente →
+      </button>
+
+    </div>
+
+  </dialog>
+
+
+  <!-- ARCHIVO JAVASCRIPT -->
+
+  <script src="./app.js" defer></script>
+
+</body>
+</html>
