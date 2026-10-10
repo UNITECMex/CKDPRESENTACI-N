@@ -1,488 +1,108 @@
-
 <!doctype html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111310">
-
-  <meta
-    name="description"
-    content="Grupo Empresarial CKD. Un ecosistema de marcas, sectores y empresas que comparten una visión de crecimiento."
-  >
-
+  <meta name="description" content="Grupo Empresarial CKD. Un ecosistema de marcas y sectores que comparten una visión de crecimiento.">
   <title>Grupo Empresarial CKD · Portafolio corporativo</title>
-
   <link rel="stylesheet" href="./style.css">
 </head>
-
 <body class="landing-only">
-
-  <!-- ENCABEZADO: VISIBLE DESPUÉS DE ENTRAR -->
-
+  <!-- MENÚ: APARECE DESPUÉS DE ENTRAR AL PORTAFOLIO -->
   <header>
-
-    <a
-      class="wordmark"
-      href="#inicio"
-      aria-label="CKD inicio"
-    >
-      CKD
-      <span>GRUPO EMPRESARIAL</span>
-    </a>
-
+    <a class="wordmark" href="#inicio" aria-label="Volver a inicio">CKD<span>GRUPO EMPRESARIAL</span></a>
     <nav aria-label="Navegación principal">
-
-      <a href="#portafolio" data-open>
-        Portafolio
-      </a>
-
-      <a href="#vision">
-        Nuestra visión
-      </a>
-
-      <a href="#presencia">
-        Presencia
-      </a>
-
+      <a href="#portafolio" data-open>Portafolio</a>
+      <a href="#vision">Nuestra visión</a>
+      <a href="#presencia">Presencia</a>
     </nav>
-
-    <button
-      class="present"
-      id="fullscreen"
-      type="button"
-    >
+    <button class="present" id="fullscreen" type="button">
       Modo presentación
-
-      <span>
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          aria-hidden="true"
-        >
-          <path d="M5 19 19 5M5 5h14v14"/>
-        </svg>
-      </span>
-
+      <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span>
     </button>
-
   </header>
 
   <main>
-
-    <!-- ================================= -->
-    <!-- PORTADA PRINCIPAL: SOLO LOGOTIPO  -->
-    <!-- ================================= -->
-
-    <section
-      class="hero hero-logo-only"
-      id="inicio"
-      aria-label="Bienvenida a Grupo Empresarial CKD"
-    >
-
-      <button
-        class="hero-logo"
-        id="reveal"
-        type="button"
+    <!-- PORTADA: ÚNICAMENTE IMAGE2.PNG, CLIC PARA ENTRAR -->
+    <section class="hero hero-logo-only" id="inicio" aria-label="Bienvenida a Grupo Empresarial CKD">
+      <button class="hero-logo" id="reveal" type="button"
         aria-label="Entrar al portafolio de Grupo Empresarial CKD"
-        aria-expanded="false"
-        aria-controls="portfolio-content"
-      >
-
-        <img
-          src="./image2.png"
-          alt="Grupo Empresarial CKD"
-          decoding="async"
-          fetchpriority="high"
-        >
-
+        aria-expanded="false" aria-controls="portfolio-content">
+        <img src="./image2.png" alt="Grupo Empresarial CKD" fetchpriority="high">
       </button>
-
     </section>
 
-
-    <!-- ================================= -->
-    <!-- PORTAFOLIO DE LAS 23 MARCAS       -->
-    <!-- ================================= -->
-
+    <!-- PORTAFOLIO -->
     <section class="portfolio" id="portafolio">
-
       <div class="section-heading">
-
         <div>
-
-          <p class="eyebrow">
-            01 / NUESTRO ECOSISTEMA
-          </p>
-
-          <h2>
-            Identidades propias.
-            <br>
-            <em>Una misma dirección.</em>
-          </h2>
-
+          <p class="eyebrow">01 / NUESTRO ECOSISTEMA</p>
+          <h2>Identidades propias.<br><em>Una misma dirección.</em></h2>
         </div>
-
-        <p>
-          Un portafolio multisectorial bajo una visión común.
-          <br>
-          Descubre las marcas que dan vida a nuestro grupo.
-        </p>
-
+        <p>Un portafolio multisectorial bajo una visión común.<br>Descubre las marcas que dan vida a nuestro grupo.</p>
       </div>
-
-      <!-- ESTADÍSTICAS CORPORATIVAS -->
-
       <div class="stats">
-
-        <div>
-          <strong>23</strong>
-          <span>MARCAS Y UNIDADES</span>
-        </div>
-
-        <div>
-          <strong>08</strong>
-          <span>SECTORES EMPRESARIALES</span>
-        </div>
-
-        <div>
-          <strong>07</strong>
-          <span>REGIONES DE PRESENCIA</span>
-        </div>
-
-        <div>
-          <strong>+60</strong>
-          <span>ESCUELAS VINCULADAS</span>
-        </div>
-
+        <div><strong id="brand-count">25</strong><span>MARCAS Y UNIDADES</span></div>
+        <div><strong id="sector-count">09</strong><span>SECTORES EMPRESARIALES</span></div>
+        <div><strong>07</strong><span>REGIONES DE PRESENCIA</span></div>
+        <div><strong>+60</strong><span>ESCUELAS VINCULADAS</span></div>
       </div>
-
-      <!-- CONTENIDO INTERACTIVO -->
-
       <div id="portfolio-content" hidden>
-
-        <div
-          class="filters"
-          id="filters"
-          aria-label="Filtrar marcas por sector"
-        ></div>
-
-        <!-- TARJETAS GENERADAS POR APP.JS -->
-
-        <div
-          class="cards"
-          id="cards"
-        ></div>
-
-        <p class="portfolio-note">
-          Selecciona una marca para conocer su enfoque,
-          servicios y presencia.
-        </p>
-
+        <div class="filters" id="filters" aria-label="Filtrar marcas por sector"></div>
+        <div class="cards" id="cards"></div>
+        <p class="portfolio-note">Selecciona una marca para conocer su enfoque, servicios y presencia.</p>
       </div>
-
-      <!-- ACCESO AL PORTAFOLIO -->
-
-      <button
-        class="outline"
-        id="second-reveal"
-        type="button"
-      >
-
-        Descubrir las 23 marcas
-
-        <span>
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            aria-hidden="true"
-          >
-            <path d="M5 19 19 5M5 5h14v14"/>
-          </svg>
-        </span>
-
+      <button class="outline" id="second-reveal" type="button">
+        Descubrir las <span class="reveal-count">25</span> marcas
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></span>
       </button>
-
     </section>
 
-
-    <!-- ================================= -->
-    <!-- NUESTRA VISIÓN                    -->
-    <!-- ================================= -->
-
+    <!-- NUESTRA VISIÓN -->
     <section class="vision" id="vision">
-
       <div>
-
-        <p class="eyebrow">
-          02 / DIRECCIÓN CORPORATIVA
-        </p>
-
-        <h2>
-          El valor de estar
-          <br>
-          <em>conectados.</em>
-        </h2>
-
-        <p class="body-copy">
-          Grupo Empresarial CKD articula y gestiona un
-          portafolio multisectorial, manteniendo dirección
-          estratégica, identidad institucional y visión de
-          crecimiento para cada marca.
-        </p>
-
-        <blockquote>
-          “Un grupo. Múltiples sectores.
-          <br>
-          Una misma visión de crecimiento.”
-        </blockquote>
-
+        <p class="eyebrow">02 / DIRECCIÓN CORPORATIVA</p>
+        <h2>El valor de estar<br><em>conectados.</em></h2>
+        <p class="body-copy">Grupo Empresarial CKD articula y gestiona un portafolio multisectorial, manteniendo dirección estratégica, identidad institucional y visión de crecimiento para cada marca.</p>
+        <blockquote>“Un grupo. Múltiples sectores.<br>Una misma visión de crecimiento.”</blockquote>
       </div>
-
-      <!-- PRINCIPIOS CORPORATIVOS -->
-
       <div class="principles">
-
-        <article>
-
-          <span>01</span>
-
-          <div>
-            <h3>Dirección estratégica</h3>
-            <p>
-              Objetivos, expansión, prioridades
-              y visión corporativa.
-            </p>
-          </div>
-
-          <b>
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              aria-hidden="true"
-            >
-              <path d="M5 19 19 5M5 5h14v14"/>
-            </svg>
-          </b>
-
-        </article>
-
-        <article>
-
-          <span>02</span>
-
-          <div>
-            <h3>Identidad y comunicación</h3>
-            <p>
-              Posicionamiento, narrativa, diseño
-              y presencia pública.
-            </p>
-          </div>
-
-          <b>
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              aria-hidden="true"
-            >
-              <path d="M5 19 19 5M5 5h14v14"/>
-            </svg>
-          </b>
-
-        </article>
-
-        <article>
-
-          <span>03</span>
-
-          <div>
-            <h3>Operación y seguimiento</h3>
-            <p>
-              Ejecución, indicadores, coordinación
-              y mejora continua.
-            </p>
-          </div>
-
-          <b>
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              aria-hidden="true"
-            >
-              <path d="M5 19 19 5M5 5h14v14"/>
-            </svg>
-          </b>
-
-        </article>
-
-        <article>
-
-          <span>04</span>
-
-          <div>
-            <h3>Alianzas y crecimiento</h3>
-            <p>
-              Convenios, vinculación y
-              nuevas oportunidades.
-            </p>
-          </div>
-
-          <b>
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              aria-hidden="true"
-            >
-              <path d="M5 19 19 5M5 5h14v14"/>
-            </svg>
-          </b>
-
-        </article>
-
+        <article><span>01</span><div><h3>Dirección estratégica</h3><p>Objetivos, expansión, prioridades y visión corporativa.</p></div><b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></b></article>
+        <article><span>02</span><div><h3>Identidad y comunicación</h3><p>Posicionamiento, narrativa, diseño y presencia pública.</p></div><b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></b></article>
+        <article><span>03</span><div><h3>Operación y seguimiento</h3><p>Ejecución, indicadores, coordinación y mejora continua.</p></div><b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></b></article>
+        <article><span>04</span><div><h3>Alianzas y crecimiento</h3><p>Convenios, vinculación y nuevas oportunidades.</p></div><b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></b></article>
       </div>
-
     </section>
 
-
-    <!-- ================================= -->
-    <!-- PRESENCIA TERRITORIAL             -->
-    <!-- ================================= -->
-
+    <!-- PRESENCIA -->
     <section class="presence" id="presencia">
-
-      <p class="eyebrow">
-        03 / PRESENCIA TERRITORIAL
-      </p>
-
+      <p class="eyebrow">03 / PRESENCIA TERRITORIAL</p>
       <div class="section-heading">
-
-        <h2>
-          Cercanos al territorio.
-          <br>
-          <em>Abiertos al futuro.</em>
-        </h2>
-
-        <p>
-          Operación, vinculación o proyección
-          <br>
-          en distintas regiones de México.
-        </p>
-
+        <h2>Cercanos al territorio.<br><em>Abiertos al futuro.</em></h2>
+        <p>Operación, vinculación o proyección<br>en distintas regiones de México.</p>
       </div>
-
-      <!-- UBICACIONES GENERADAS POR APP.JS -->
-
-      <div
-        class="locations"
-        id="locations"
-      ></div>
-
+      <div class="locations" id="locations"></div>
     </section>
 
-
-    <!-- ================================= -->
-    <!-- PIE DE PÁGINA                     -->
-    <!-- ================================= -->
-
+    <!-- PIE DE PÁGINA -->
     <footer>
-
-      <a
-        class="wordmark"
-        href="#inicio"
-      >
-        CKD
-        <span>GRUPO EMPRESARIAL</span>
-      </a>
-
-      <p>
-        Un ecosistema empresarial.
-        Una visión compartida.
-      </p>
-
-      <a href="#inicio">
-        Volver al inicio ↑
-      </a>
-
+      <a class="wordmark" href="#inicio">CKD<span>GRUPO EMPRESARIAL</span></a>
+      <p>Un ecosistema empresarial. Una visión compartida.</p>
+      <a href="#inicio">Volver al inicio ↑</a>
     </footer>
-
   </main>
 
-
-  <!-- ================================= -->
-  <!-- VENTANA DE INFORMACIÓN DE MARCAS  -->
-  <!-- ================================= -->
-
-  <dialog
-    id="brand-dialog"
-    aria-labelledby="brand-title"
-  >
-
-    <button
-      class="close"
-      type="button"
-      aria-label="Cerrar presentación"
-    >
-      ✕
-    </button>
-
+  <!-- VENTANA DE MARCA Y TARJETA DIGITAL -->
+  <dialog id="brand-dialog" aria-labelledby="brand-title">
+    <button class="close" type="button" aria-label="Cerrar presentación">✕</button>
     <div id="brand-detail"></div>
-
     <div class="dialog-nav">
-
-      <button
-        id="prev"
-        type="button"
-      >
-        ← Anterior
-      </button>
-
+      <button id="prev" type="button">← Anterior</button>
       <span id="position"></span>
-
-      <button
-        id="next"
-        type="button"
-      >
-        Siguiente →
-      </button>
-
+      <button id="next" type="button">Siguiente →</button>
     </div>
-
   </dialog>
-
-
-  <!-- JAVASCRIPT PRINCIPAL -->
-
   <script src="./app.js" defer></script>
-
 </body>
 </html>
