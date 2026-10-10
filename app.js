@@ -1,9 +1,16 @@
 
 /*
-  PORTAFOLIO GRUPO EMPRESARIAL CKD
-  Las imágenes están en la misma carpeta que index.html.
-  Cada empresa tiene su nombre, sector e imagen asignada.
+  GRUPO EMPRESARIAL CKD
+  PORTAFOLIO INTERACTIVO
+
+  Portada inicial: image2.png
+  Al hacer clic: mostrar las 23 marcas.
+  Imágenes en la misma carpeta que index.html.
 */
+
+// ==========================================
+// SECTORES EMPRESARIALES
+// ==========================================
 
 const sectors = [
   'Educación',
@@ -15,6 +22,10 @@ const sectors = [
   'Deporte y experiencias',
   'Industria y finanzas'
 ];
+
+// ==========================================
+// LAS 23 MARCAS DEL GRUPO CKD
+// ==========================================
 
 const brands = [
   {
@@ -191,7 +202,9 @@ const brands = [
   }
 ];
 
-// LOGOTIPOS CON FONDO OSCURO
+// ==========================================
+// LOGOTIPOS Y RUTAS DE IMÁGENES
+// ==========================================
 
 const dark = new Set([
   'image37.png',
@@ -201,30 +214,22 @@ const dark = new Set([
   'image41.png'
 ]);
 
-// RUTAS DE IMÁGENES
 // Las imágenes están junto a index.html.
-
 const imagePath = filename => `./${filename}`;
 
-// PROTECCIÓN DE TEXTO HTML
-
 function escapeHTML(value) {
-  return String(value ?? '').replace(
-    /[&<>"']/g,
-    character => ({
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#39;'
-    })[character]
-  );
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[char]);
 }
 
-// GENERADOR DE LOGOTIPOS
-
 function logo(brand) {
-  const className = dark.has(brand.image) ? ' dark' : '';
+
+  const darkClass = dark.has(brand.image) ? ' dark' : '';
 
   const content = brand.image
     ? `<img
@@ -239,45 +244,63 @@ function logo(brand) {
        </span>`;
 
   return `
-    <div class="logo-box${className}">
+    <div class="logo-box${darkClass}">
       ${content}
     </div>
   `;
 }
 
-// VARIABLES GENERALES
+// ==========================================
+// VARIABLES DEL PORTAFOLIO
+// ==========================================
 
 let filter = -1;
 let selected = 0;
-let lastFocus;
+let lastFocus = null;
 
 const cards = document.querySelector('#cards');
-const dialog = document.querySelector('dialog');
+const filters = document.querySelector('#filters');
+const dialog = document.querySelector('#brand-dialog');
 
-// TARJETAS DE EMPRESAS
+const portfolioContent = document.querySelector('#portfolio-content');
+const enterButton = document.querySelector('#reveal');
+const secondReveal = document.querySelector('#second-reveal');
+
+const reduceMotion = () =>
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// ==========================================
+// GENERAR TARJETAS DE LAS MARCAS
+// ==========================================
 
 function renderCards() {
 
   cards.innerHTML = brands.map((brand, index) => {
 
-    if (filter >= 0 && brand.sector !== filter) {
+    if (filter !== -1 && brand.sector !== filter) {
       return '';
     }
 
     return `
       <button
         class="card"
+        type="button"
         data-brand="${index}"
         style="animation-delay:${Math.min(index, 8) * 35}ms"
       >
 
         ${logo(brand)}
 
-        <small>${sectors[brand.sector]}</small>
+        <small>
+          ${escapeHTML(sectors[brand.sector])}
+        </small>
 
-        <h3>${escapeHTML(brand.name)}</h3>
+        <h3>
+          ${escapeHTML(brand.name)}
+        </h3>
 
         <div class="card-bottom">
+
           <span>Conocer la marca</span>
 
           <b>
@@ -293,6 +316,7 @@ function renderCards() {
               <path d="M5 19 19 5M5 5h14v14"/>
             </svg>
           </b>
+
         </div>
 
       </button>
@@ -300,87 +324,158 @@ function renderCards() {
 
   }).join('');
 
-  cards.querySelectorAll('button').forEach(button => {
-    button.onclick = () => {
-      openBrand(Number(button.dataset.brand));
-    };
-  });
-
 }
 
-// FILTROS POR SECTOR
+// ABRIR LA MARCA SELECCIONADA
 
-const filters = document.querySelector('#filters');
+cards.addEventListener('click', event => {
+
+  const card = event.target.closest('[data-brand]');
+
+  if (card) {
+    openBrand(Number(card.dataset.brand));
+  }
+
+});
+
+// ==========================================
+// FILTROS DEL PORTAFOLIO
+// ==========================================
 
 filters.innerHTML = [
   'Todo el portafolio',
   ...sectors
-].map((sector, index) => `
+].map((name, index) => `
+
   <button
+    type="button"
     data-filter="${index - 1}"
     class="${index === 0 ? 'active' : ''}"
     aria-pressed="${index === 0}"
   >
-    ${sector}
+    ${escapeHTML(name)}
   </button>
+
 `).join('');
 
-filters.querySelectorAll('button').forEach(button => {
+filters.addEventListener('click', event => {
 
-  button.onclick = () => {
+  const button = event.target.closest('[data-filter]');
 
-    filter = Number(button.dataset.filter);
+  if (!button) return;
 
-    filters.querySelectorAll('button').forEach(other => {
+  filter = Number(button.dataset.filter);
 
-      other.classList.toggle(
-        'active',
-        other === button
-      );
+  filters.querySelectorAll('[data-filter]').forEach(item => {
 
-      other.setAttribute(
-        'aria-pressed',
-        other === button
-      );
+    const active = item === button;
 
-    });
+    item.classList.toggle('active', active);
 
-    renderCards();
+    item.setAttribute(
+      'aria-pressed',
+      String(active)
+    );
 
-  };
+  });
+
+  renderCards();
 
 });
 
-// MOSTRAR PORTAFOLIO
+// ==========================================
+// ENTRAR AL PORTAFOLIO DESDE EL LOGOTIPO
+// ==========================================
 
-function reveal() {
+function reveal(event) {
 
-  document.querySelector('#portfolio-content').hidden = false;
+  event?.preventDefault();
 
-  document.querySelector('#second-reveal').hidden = true;
+  // Desactivar la portada inicial.
+  document.body.classList.remove('landing-only');
 
-  document.querySelector('#reveal').setAttribute(
+  // Mostrar las 23 marcas.
+  portfolioContent.hidden = false;
+
+  // Ocultar botón secundario.
+  secondReveal.hidden = true;
+
+  // Actualizar estado del logo principal.
+  enterButton.setAttribute(
     'aria-expanded',
     'true'
   );
 
-  document.querySelector('#portafolio').scrollIntoView({
-    behavior: matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches ? 'instant' : 'smooth'
+  // Desplazamiento directo a las marcas.
+  requestAnimationFrame(() => {
+
+    portfolioContent.scrollIntoView({
+
+      behavior: reduceMotion() ? 'auto' : 'smooth',
+
+      block: 'start'
+
+    });
+
   });
 
 }
 
-document.querySelector('#reveal').onclick = reveal;
+// CLIC EN EL LOGOTIPO PRINCIPAL
 
-document.querySelector('#second-reveal').onclick = reveal;
+enterButton.addEventListener('click', reveal);
+
+// BOTÓN SECUNDARIO
+
+secondReveal.addEventListener('click', reveal);
+
+// ENLACES DEL MENÚ
 
 document.querySelectorAll('[data-open]').forEach(link => {
-  link.onclick = reveal;
+
+  link.addEventListener('click', reveal);
+
 });
 
-// INFORMACIÓN DETALLADA DE CADA EMPRESA
+// ==========================================
+// REGRESAR A LA PORTADA PRINCIPAL
+// ==========================================
+
+function returnHome(event) {
+
+  event.preventDefault();
+
+  // Ocultar las marcas.
+  portfolioContent.hidden = true;
+
+  // Restaurar botón secundario.
+  secondReveal.hidden = false;
+
+  // Actualizar estado.
+  enterButton.setAttribute(
+    'aria-expanded',
+    'false'
+  );
+
+  // Activar nuevamente la portada minimalista.
+  document.body.classList.add('landing-only');
+
+  // Regresar al logotipo CKD.
+  window.scrollTo(0, 0);
+
+}
+
+// LOGOTIPOS Y ENLACES PARA VOLVER AL INICIO
+
+document.querySelectorAll('a[href="#inicio"]').forEach(link => {
+
+  link.addEventListener('click', returnHome);
+
+});
+
+// ==========================================
+// INFORMACIÓN DETALLADA DE CADA MARCA
+// ==========================================
 
 function detail() {
 
@@ -395,7 +490,7 @@ function detail() {
       <div>
 
         <p class="eyebrow">
-          ${sectors[brand.sector]} / PORTAFOLIO CKD
+          ${escapeHTML(sectors[brand.sector])} / PORTAFOLIO CKD
         </p>
 
         <h2 id="brand-title">
@@ -417,9 +512,11 @@ function detail() {
         <h3>Enfoque y servicios</h3>
 
         <ul>
+
           ${brand.services.map(service => `
             <li>${escapeHTML(service)}</li>
           `).join('')}
+
         </ul>
 
       </div>
@@ -455,7 +552,9 @@ function detail() {
 
 }
 
+// ==========================================
 // ABRIR VENTANA DE EMPRESA
+// ==========================================
 
 function openBrand(index) {
 
@@ -471,13 +570,18 @@ function openBrand(index) {
 
 }
 
-// CERRAR VENTANA
+// ==========================================
+// CERRAR VENTANA DE EMPRESA
+// ==========================================
 
-function close() {
+function closeDialog() {
   dialog.close();
 }
 
-document.querySelector('.close').onclick = close;
+document.querySelector('.close').addEventListener(
+  'click',
+  closeDialog
+);
 
 dialog.addEventListener('close', () => {
 
@@ -487,7 +591,7 @@ dialog.addEventListener('close', () => {
 
 });
 
-// CERRAR AL HACER CLIC FUERA
+// CERRAR AL PULSAR FUERA DE LA VENTANA
 
 dialog.addEventListener('click', event => {
 
@@ -495,18 +599,21 @@ dialog.addEventListener('click', event => {
 
   const rect = dialog.getBoundingClientRect();
 
-  if (
+  const outside =
     event.clientX < rect.left ||
     event.clientX > rect.right ||
     event.clientY < rect.top ||
-    event.clientY > rect.bottom
-  ) {
-    close();
+    event.clientY > rect.bottom;
+
+  if (outside) {
+    closeDialog();
   }
 
 });
 
-// NAVEGACIÓN ENTRE EMPRESAS
+// ==========================================
+// NAVEGACIÓN ENTRE MARCAS
+// ==========================================
 
 function step(direction) {
 
@@ -518,74 +625,89 @@ function step(direction) {
 
 }
 
-document.querySelector('#prev').onclick = () => step(-1);
+document.querySelector('#prev').addEventListener(
+  'click',
+  () => step(-1)
+);
 
-document.querySelector('#next').onclick = () => step(1);
+document.querySelector('#next').addEventListener(
+  'click',
+  () => step(1)
+);
 
-// NAVEGACIÓN CON TECLADO
+// NAVEGACIÓN CON FLECHAS DEL TECLADO
 
 document.addEventListener('keydown', event => {
 
-  if (dialog.open && event.key === 'ArrowRight') {
+  if (!dialog.open) return;
+
+  if (event.key === 'ArrowRight') {
     step(1);
   }
 
-  if (dialog.open && event.key === 'ArrowLeft') {
+  if (event.key === 'ArrowLeft') {
     step(-1);
   }
 
 });
 
-// MODO PRESENTACIÓN
+// ==========================================
+// MODO PRESENTACIÓN / PANTALLA COMPLETA
+// ==========================================
 
-document.querySelector('#fullscreen').onclick = async () => {
+const fullscreenButton = document.querySelector('#fullscreen');
+
+fullscreenButton.addEventListener('click', async () => {
 
   try {
 
-    if (!document.fullscreenElement) {
+    if (document.fullscreenElement) {
 
-      await document.documentElement.requestFullscreen();
+      await document.exitFullscreen();
 
     } else {
 
-      await document.exitFullscreen();
+      await document.documentElement.requestFullscreen();
 
     }
 
   } catch {
 
-    document.querySelector('#fullscreen').textContent =
+    fullscreenButton.textContent =
       'Pantalla completa no disponible';
 
   }
 
-};
+});
 
 // ACTUALIZAR BOTÓN DE PRESENTACIÓN
 
 document.addEventListener('fullscreenchange', () => {
 
-  document.querySelector('#fullscreen').innerHTML =
-    document.fullscreenElement
-      ? 'Salir de presentación ↙'
-      : `Modo presentación
-         <span>
-           <svg
-             width="14"
-             height="14"
-             viewBox="0 0 24 24"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="1.5"
-             aria-hidden="true"
-           >
-             <path d="M5 19 19 5M5 5h14v14"/>
-           </svg>
-         </span>`;
+  fullscreenButton.innerHTML = document.fullscreenElement
+
+    ? 'Salir de presentación ↙'
+
+    : `Modo presentación
+       <span>
+         <svg
+           width="14"
+           height="14"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           stroke-width="1.5"
+           aria-hidden="true"
+         >
+           <path d="M5 19 19 5M5 5h14v14"/>
+         </svg>
+       </span>`;
 
 });
 
+// ==========================================
 // UBICACIONES DEL GRUPO EMPRESARIAL
+// ==========================================
 
 const locations = [
 
@@ -633,24 +755,33 @@ const locations = [
 
 ];
 
+// ==========================================
 // MOSTRAR UBICACIONES
+// ==========================================
 
-document.querySelector('#locations').innerHTML = locations.map(location => `
+document.querySelector('#locations').innerHTML =
+  locations.map(location => `
 
-  <article class="location">
+    <article class="location">
 
-    <small>
-      ${location[1].toUpperCase()}
-    </small>
+      <small>
+        ${escapeHTML(location[1].toUpperCase())}
+      </small>
 
-    <h3>${location[0]}</h3>
+      <h3>
+        ${escapeHTML(location[0])}
+      </h3>
 
-    <p>${location[2]}</p>
+      <p>
+        ${escapeHTML(location[2])}
+      </p>
 
-  </article>
+    </article>
 
-`).join('');
+  `).join('');
 
+// ==========================================
 // INICIAR PORTAFOLIO
+// ==========================================
 
 renderCards();
